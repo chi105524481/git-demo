@@ -46,16 +46,52 @@
 using s = System;
 namespace demo
 {
-    struct Person
-    {
-        public string name;
-        public string phone;
-        public double height;
-        public double weight;
-    }
+    #region Person 小白
+    // struct Person
+    // {
+    //     public string name;
+    //     public string phone;
+    //     public double height;
+    //     public double weight;
+    // }
+    #endregion
     class Program
     {
+        #region 遞迴-最大公因數
+        // static int fab(int a, int b)
+        // {
+        //     if (a % b == 0)
+        //     {
+        //         return b;
+        //     }
+        //     else
+        //     {
+        //         return fab(b, a % b);
+        //     }
+        // }
+        #endregion
+        #region 遞迴-進制轉換
+        static void carry(int a, int b)
+        {
+            int c;
+            if (a < b)
+            {
+                // Console.WriteLine(a + "%" + b + "：餘數= " + a % b);
+                Console.Write(a % b);
+            }
+            else if (a / b == 0 && a % b == 0)
+            {
+                Console.Write("0");
+            }
+            else
+            {
+                // Console.WriteLine(a + "/" + b + "：商= " + a / b);
+                carry(a / b, b);
+                Console.Write("e" + a % b);
+            }
 
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region person
@@ -172,13 +208,13 @@ namespace demo
             // }
             #endregion
             #region 輸入三個數字，輸出Max
-            Console.Write("輸入三個數字比大小，請輸入第一個：");
-            int a = Convert.ToInt32(Console.ReadLine());
-            Console.Write("輸入三個數字比大小，請輸入第二個：");
-            int b = Convert.ToInt32(Console.ReadLine());
-            Console.Write("輸入三個數字比大小，請輸入第三個：");
-            int c = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("最大值為： " + ((a > b ? a : b) > c ? (a > b ? a : b) : c));
+            // Console.Write("輸入三個數字比大小，請輸入第一個：");
+            // int a = Convert.ToInt32(Console.ReadLine());
+            // Console.Write("輸入三個數字比大小，請輸入第二個：");
+            // int b = Convert.ToInt32(Console.ReadLine());
+            // Console.Write("輸入三個數字比大小，請輸入第三個：");
+            // int c = Convert.ToInt32(Console.ReadLine());
+            // Console.WriteLine("最大值為： " + ((a > b ? a : b) > c ? (a > b ? a : b) : c));
 
 
             #endregion
@@ -205,7 +241,24 @@ namespace demo
             // }
             // Console.Write("\n第50個數字："+c);
             #endregion
-
+            #region 九九乘法
+            // for (int i = 1; i <= 9; i++)
+            // {
+            //     for (int j = 1; j <= 9; j++)
+            //     {
+            //         Console.Write(i + "*" + j + "=" + (i * j) + "\t");
+            //     }
+            //     Console.WriteLine();
+            // }
+            #endregion
+            #region 遞迴-最大公因數
+            // int result = fab(12, 8);
+            // Console.WriteLine(result);
+            #endregion
+            #region 遞迴-進制轉換
+            carry(127, 8);
+            // Console.WriteLine(result);
+            #endregion
             Console.ReadKey();
         }
     }
