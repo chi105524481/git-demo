@@ -125,15 +125,6 @@ namespace demo
             // Console.WriteLine((a!=b)?"錯了":"對了");
             // Console.WriteLine("ans="+a);
             #endregion
-            #region 亂數產生數，未完成
-
-            // Random ran_2 = new Random();
-            // int a2=ran_2.Next(1,10);
-            // Console.WriteLine(a2/100);
-            // int b2=ran_2.Next(5,15);
-
-            // Random ran_3 = new Random();
-            // double a3=ran_3.Next(12,17561);
             // Console.WriteLine(a3/10000);
 
             #endregion
